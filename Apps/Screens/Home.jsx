@@ -31,17 +31,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // rendering newscard
-  // const renderItem = ({ item, index }) => (
-  //   <View>
-  //     {loading || error ? (
-  //       <NewsCardSkeleton height={200} />
-  //     ) : (
-  //       <NewsCard height={200} news={item.news} tag={item.tags} id={item._id} />
-  //     )}
-  //   </View>
-  // );
-
   const flatListRef = useRef(null);
 
   useEffect(() => {

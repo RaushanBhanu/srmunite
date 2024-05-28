@@ -88,10 +88,7 @@ export default function NewsExtended() {
         <Ionicons name="chevron-back-outline" size={28} color={iconColor} />
       </TouchableOpacity>
       {/* News Image */}
-      <Image
-        style={styles.image}
-        source={require("../../assets/images/LostandFoundItems/LostItem1.jpg")}
-      />
+      <Image style={styles.image} source={{ uri: NewsData.image }} />
       <View style={styles.newsContainer}>
         {/* News Heading */}
         <Text style={[themeHeadingStyle, styles.heading]}>{NewsData.news}</Text>
@@ -126,7 +123,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 250,
-    resizeMode: "stretch",
+    resizeMode: "contain",
     borderRadius: 8,
     marginBottom: 30,
   },

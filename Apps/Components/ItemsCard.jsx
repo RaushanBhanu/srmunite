@@ -17,7 +17,7 @@ export default function ItemsCard({ data }) {
   const colorScheme = useColorScheme();
   const themeTextStyle =
     colorScheme === "light" ? styles.lightThemeText : styles.darkThemeText;
-    
+
   const fontloaded = CustomFonts();
   if (!fontloaded) {
     return null;
@@ -26,7 +26,8 @@ export default function ItemsCard({ data }) {
     <View style={styles.body}>
       <View style={styles.container}>
         <Image
-          source={require("../../assets/images/LostandFoundItems/LostItem1.jpg")}
+          // resizeMode="contain"
+          source={{ uri: data.image }}
           style={styles.image}
         />
         <Text style={[styles.text, themeTextStyle]}>ITEM : {data.item}</Text>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 220,
+    height: 320,
     borderRadius: 13,
     resizeMode: "stretch",
     marginBottom: 18,

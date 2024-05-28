@@ -5,7 +5,7 @@ import {
   ActivityIndicator,
   FlatList,
   Text,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
@@ -31,6 +31,7 @@ export default function LostAndFound() {
       .then((response) => response.json())
       .then((data) => {
         if (isMounted) {
+          console.log(data);
           setLostAndFoundData(data);
           setLoading(false);
         }
@@ -61,7 +62,6 @@ export default function LostAndFound() {
       </ScrollView>
     );
   }
-
 
   if (!fontloaded) {
     return null;
